@@ -1,0 +1,25 @@
+// wap for tower of honai
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int towerOfHonai(int n, char str, char helper, char dest){
+
+    //base case
+    if(n==0) return 0;
+
+    towerOfHonai(n-1,str,dest,helper);
+    cout<<"Move from "<< str <<" to " << dest <<endl;
+    towerOfHonai(n-1,helper,str,dest);
+}
+
+int main()
+{
+
+
+
+    towerOfHonai(3,'A','B','C');
+
+    return 0;
+
+}
