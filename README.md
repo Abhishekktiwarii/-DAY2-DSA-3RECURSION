@@ -1,4 +1,20 @@
-@Autowired
+package com.example.demo.service;
+ 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.*;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+import com.example.demo.entity.Style;
+import com.example.demo.entity.Textbox;
+ 
+@Service
+public class Data {
+ 
+    @Autowired
     private Extractdata extractdata;
  
     public byte[] processExcel(MultipartFile file) throws IOException {
@@ -233,3 +249,4 @@
         workbook.close(); // Close the input workbook as well
         return out.toByteArray();
     }
+}
